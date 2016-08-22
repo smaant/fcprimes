@@ -1,6 +1,6 @@
 # fcprimes
 
-Command-line util for generating multiplication table of prime numbers.
+Command-line util for multiplication table of prime numbers generation.
 
 ## Usage
 To run with default parameters (10 prime numbers):
@@ -28,12 +28,12 @@ of running time for prime numbers generation:
 
 ``` Clojure
 ; Java
-smaant.primes> (quick-bench (.nPrimes (Primes.) 10000))
+smaant.primes> (bench (.nPrimes (Primes.) 10000))
 Evaluation count : 77220 in 60 samples of 1287 calls.
              Execution time mean : 780.383643 µs
 
 ; Clojure
-smaant.primes> (quick-bench (n-primes 10000))
+smaant.primes> (bench (n-primes 10000))
 Evaluation count : 240 in 60 samples of 4 calls.
              Execution time mean : 308.237249 ms
 ```
