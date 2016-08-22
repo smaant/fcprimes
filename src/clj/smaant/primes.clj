@@ -8,7 +8,7 @@
 
 (defn- next-prime
   "Returns a prime number next after `prev-prime` up to `limit`.
-   `composites` should be a set of all known up composite numbers for all prime
+   `composites` should be a set of all known composite numbers for all prime
    numbers from 2 up to `prev-prime`.
    Returns `nil` if there's no more primes and `2` if `prev-prime` is nil."
   [prev-prime composites limit]
@@ -27,9 +27,7 @@
       primes
       (let [composites* (set/union composites (set (range (* i i) (inc limit) i)))
             i* (next-prime i composites* limit)]
-        (if i*
-          (recur (conj primes i) composites* i*)
-          (conj primes i))))))
+        (recur (conj primes i) composites* i*)))))
 
 (defn- composites
   "Generates set of composite number for given prime numbers up to `limit`.
@@ -43,7 +41,8 @@
 (defn- next-limit
   "Calculates next limit for prime numbers generator.
    Limit calculated based on assumption that prime numbers are pretty stable distributed
-   per every 1000 of natural numbers. `per-thousand` - is expected number of primes per 1000."
+   per every 1000 of natural numbers.
+  `per-thousand` - is expected number of primes per 1000."
   [cur-limit n per-thousand]
   (+ cur-limit (* 1000 (/ n per-thousand))))
 
