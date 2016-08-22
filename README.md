@@ -20,6 +20,12 @@ lein run -d # Print debug information about time spent on different stages
 lein run -q # Quiet mode, doesn't print multipliation table
 ```
 
+To package and run:
+``` bash
+lein uberjar
+java -jar <path to jar file> -n 25 -jd
+```
+
 ## Notes
 In spite of beeing a general purpose language, Clojure is not very good at this kind of task.
 The resulted algorithm might be more expressive, but performance will certainly suffer. Out of

@@ -4,7 +4,7 @@
             [clojure.java.io :as io]
             [clojure.string :as str]
             [clojure.tools.cli :refer [parse-opts]])
-  (:import [smaant Matrix Primes]))
+  (:import [smaant.java Matrix Primes]))
 
 (defn- next-prime
   "Returns a prime number next after `prev-prime` up to `limit`.

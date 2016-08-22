@@ -1,4 +1,4 @@
-package smaant;
+package smaant.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;
